@@ -1408,7 +1408,8 @@ namespace SimpleJson
                             foreach (object o in jsonObject)
                                 list.Add(DeserializeObject(o, innerType));
                         }
-                        obj = list;
+                        obj = list ?? new object[0];
+
                     }
                 }
                 return obj;
